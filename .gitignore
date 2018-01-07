@@ -29,3 +29,7 @@ target/*
 /*/.settings/*
 /logs/*
 logs/*
+.idea/*/*
+/.idea/*
+*.iml
+/*/*.iml

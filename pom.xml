@@ -2,93 +2,95 @@
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
   http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.vincent.dubbo</groupId>
-  <artifactId>consumer</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+<groupId>org.vincent.dubbo</groupId>
+<artifactId>consumer</artifactId>
+<version>0.0.1-SNAPSHOT</version>
+<packaging>jar</packaging>
 
-  <name>consumer</name>
-  <url>http://maven.apache.org</url>
+<name>consumer</name>
+<url>http://maven.apache.org</url>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <org.springframework.version>3.2.4.RELEASE</org.springframework.version>
-  </properties>
-
-  <dependencies>
-    <dependency>
-      <groupId>org.vincent.aliyun</groupId>
-      <artifactId>service-api</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.12</version>
-      <scope>test</scope>
-    </dependency>
-    
-    <!-- DUBBO START -->
-     <dependency>
+<properties>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  <org.springframework.version>3.2.4.RELEASE</org.springframework.version>
+</properties>
+<dependencies>
+  <dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.12</version>
+    <scope>test</scope>
+  </dependency>
+  <!-- DUBBO START -->
+  <dependency>
     <groupId>com.alibaba</groupId>
-        <artifactId>dubbo</artifactId>
-        <version>2.5.4</version>
-        <!-- <version>2.5.3</version> -->
-    </dependency>
-    <dependency>
-        <groupId>org.apache.zookeeper</groupId>
-        <artifactId>zookeeper</artifactId>
-        <version>3.4.9</version>
-    </dependency>
-    <dependency>
-        <groupId>com.101tec</groupId>
-        <artifactId>zkclient</artifactId>
-        <version>0.3</version>
-    </dependency>
-    <dependency>
-        <groupId>org.jboss.netty</groupId>
-        <artifactId>netty</artifactId>
-        <version>3.2.5.Final</version>
-    </dependency>
-    <!-- DUBBO STOP -->
-        
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-aop</artifactId>
-        <version>${org.springframework.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-aspects</artifactId>
-        <version>${org.springframework.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-beans</artifactId>
-        <version>${org.springframework.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-context</artifactId>
-        <version>${org.springframework.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-context-support</artifactId>
-        <version>${org.springframework.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-core</artifactId>
-        <version>${org.springframework.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-test</artifactId>
-        <version>${org.springframework.version}</version>
-        <scope>test</scope>
-    </dependency>
-  </dependencies>
+    <artifactId>dubbo</artifactId>
+    <version>2.5.4</version>
+    <!-- <version>2.5.3</version> -->
+  </dependency>
+  <dependency>
+    <groupId>org.apache.zookeeper</groupId>
+    <artifactId>zookeeper</artifactId>
+    <version>3.4.9</version>
+  </dependency>
+  <dependency>
+    <groupId>com.101tec</groupId>
+    <artifactId>zkclient</artifactId>
+    <version>0.3</version>
+  </dependency>
+  <dependency>
+    <groupId>org.jboss.netty</groupId>
+    <artifactId>netty</artifactId>
+    <version>3.2.5.Final</version>
+  </dependency>
+  <!-- DUBBO STOP -->
+
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-aop</artifactId>
+    <version>${org.springframework.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-aspects</artifactId>
+    <version>${org.springframework.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-beans</artifactId>
+    <version>${org.springframework.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-context</artifactId>
+    <version>${org.springframework.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-context-support</artifactId>
+    <version>${org.springframework.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-core</artifactId>
+    <version>${org.springframework.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-test</artifactId>
+    <version>${org.springframework.version}</version>
+    <scope>test</scope>
+  </dependency>
+  <!-- 因为消费端总是不能解析获取到接口包，服务提供端和消费端共享的接口包 所以这里使用system指定依赖方式。 -->
+  <dependency>
+    <groupId>org.vincent.aliyun</groupId>
+    <artifactId>service-api</artifactId>
+    <version>1.0</version>
+    <scope>system</scope>
+    <systemPath>${project.basedir}/lib/service-api-1.0.jar</systemPath>
+  </dependency>
+
+</dependencies>
 </project>
